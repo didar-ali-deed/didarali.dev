@@ -628,3 +628,106 @@ body.dark .about-paragraph {
         gap: 20px;
     }
 }
+
+
+/* Ultimate Mobile Fix – No More Cutoff/PDF Look */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    .hero {
+        padding-top: 100px !important;
+        padding: 100px 12px 60px;
+        min-height: 80vh;
+    }
+
+    .hero-title {
+        font-size: 2.8rem !important;
+        line-height: 1.1;
+        word-break: break-word;
+    }
+
+    .grad1,
+    .grad2,
+    .grad3,
+    .grad4 {
+        font-size: inherit !important;
+    }
+
+    .hero-title br {
+        display: none;
+    }
+
+    .subtitle {
+        font-size: 1.2rem !important;
+        line-height: 1.3;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 280px;
+        margin: 10px 0;
+    }
+
+    /* Stats – Single Column, No Squeeze */
+    .light-section .container {
+        grid-template-columns: 1fr !important;
+        gap: 24px;
+    }
+
+    .light-section h3 {
+        font-size: 2rem !important;
+    }
+
+    .light-section p,
+    .light-section span {
+        font-size: 1rem !important;
+        line-height: 1.5;
+    }
+
+    /* Projects – Stack Vertically */
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px;
+    }
+
+    .project-card img {
+        height: 180px !important;
+    }
+
+    /* Contact – Bigger Inputs */
+    .contact-form input,
+    .contact-form textarea {
+        padding: 14px;
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Footer – Compact */
+    footer {
+        padding: 40px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* iPhone-Specific (Fixes Safari Cutoff) */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 768px) {
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+    }
+}
