@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact – Didar Ali | AI/ML & Systems Engineer</title>
-    <meta name="description" content="Contact Didar Ali – B.Sc. CSE 2025 | Open to AI/ML, Systems & Data roles" />
+    <meta name="description"
+        content="Contact Didar Ali – B.Sc. CSE 2021–2025 | 83.2% Wav2Vec2 | Open to AI/ML, Systems & Data roles" />
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -42,7 +43,7 @@
                 <strong>AI/ML • Systems Engineering • Data Analytics</strong>
             </p>
 
-            <!-- All 3 Real CVs – Beautiful Buttons -->
+            <!-- All 3 Real CVs -->
             <div class="cv-buttons cv-buttons-hero">
                 <a href="Didar_Ali_AI_ML_Engineer.pdf" download class="btn cv-btn ai-cv">
                     AI / Machine Learning Engineer CV
@@ -59,9 +60,9 @@
                 <a href="mailto:didarali1129@gmail.com" class="btn btn-primary">Email Me Now</a>
             </div>
 
-            <p style="margin-top:50px; font-size:1.3rem; color:#e0e7ff; opacity:0.9;">
+            <p style="margin-top:50px;font-size:1.3rem;color:#e0e7ff;opacity:0.9;">
                 Final-Year Project: <strong>83.2% accuracy</strong> using Wav2Vec2 transformer<br>
-                B.Sc. Computer Systems Engineering – UET Peshawar (2025)
+                B.Sc. Computer Systems Engineering – UET Peshawar (2021 – 2025)
             </p>
         </div>
     </section>
@@ -69,11 +70,11 @@
     <!-- Contact Form + Quick Access -->
     <section class="light-section" style="padding:140px 0;">
         <div class="container"
-            style="max-width:1300px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:100px;">
+            style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;">
 
             <!-- Left: Form -->
             <div data-aos="fade-right">
-                <h2 class="section-title" style="text-align:left; margin-bottom:40px;">Send a Message</h2>
+                <h2 class="section-title" style="text-align:left;margin-bottom:40px;">Send a Message</h2>
                 <form id="contactForm" class="contact-form">
                     <input type="text" name="name" placeholder="Your Name" required />
                     <input type="email" name="email" placeholder="Your Email" required />
@@ -86,10 +87,12 @@
 
             <!-- Right: CV Preview + Social -->
             <div data-aos="fade-left">
-                <h2 class="section-title" style="text-align:left; margin-bottom:40px;">Quick Access</h2>
+                <h2 class="section-title" style="text-align:left;margin-bottom:40px;">Quick Access</h2>
                 <div class="cv-card">
                     <img src="img/cv-preview.jpg" alt="CV Preview"
-                        onerror="this.src='https://via.placeholder.com/600x840/6366f1/white?text=CV'" />
+                        onerror="this.src='https://via.placeholder.com/600x840/6366f1/white?text=CV+PREVIEW'" />
+
+                    <!-- All 3 CVs Again -->
                     <div class="cv-buttons" style="margin:30px 0;">
                         <a href="Didar_Ali_AI_ML_Engineer.pdf" download class="btn cv-btn ai-cv">AI/ML CV</a>
                         <a href="Didar_Ali_Computer_Systems_Engineer.pdf" download class="btn cv-btn systems-cv">Systems
@@ -97,6 +100,7 @@
                         <a href="Didar_Ali_Data_Analyst_CV.pdf" download class="btn cv-btn data-cv">Data CV</a>
                     </div>
                 </div>
+
                 <div class="social-links">
                     <a href="https://linkedin.com/in/didar-ali-deed" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/didar-ali-deed" target="_blank"><i class="fab fa-github"></i></a>
@@ -125,7 +129,7 @@
         const t = document.getElementById('theme-toggle'), s = document.getElementById('sun-icon'), m = document.getElementById('moon-icon');
         if (localStorage.theme === 'dark' || (localStorage.theme !== 'light' && matchMedia('(prefers-color-scheme:dark)').matches)) {
             document.body.classList.add('dark'); s.style.display = 'none'; m.style.display = 'block';
-        }
+        } else { s.style.display = 'block'; m.style.display = 'none'; }
         t.onclick = () => {
             document.body.classList.toggle('dark');
             document.body.classList.contains('dark') ? (s.style.display = 'none', m.style.display = 'block', localStorage.theme = 'dark')
