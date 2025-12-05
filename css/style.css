@@ -519,3 +519,112 @@ body.dark .about-paragraph {
     color: #f1f5f9 !important;
     /* Clean white in dark mode */
 }
+
+
+/* Mobile Fixes – Perfect on Phones (iPhone/Android) */
+@media (max-width: 768px) {
+
+    /* Header – Smaller & No Overlap */
+    header {
+        padding: 12px 0;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .hero {
+        padding-top: 120px !important;
+        padding: 120px 16px 80px;
+    }
+
+    /* Hero – Smaller Text, Better Stacking */
+    .hero-title {
+        font-size: 3.2rem !important;
+        line-height: 1.1;
+    }
+
+    .grad4 {
+        font-size: 3.8rem !important;
+    }
+
+    .hero-title br {
+        display: none;
+    }
+
+    /* Stack on one line */
+    .subtitle {
+        font-size: 1.4rem;
+        line-height: 1.4;
+    }
+
+    /* Stats – Stack to 1 Column, Bigger Text */
+    .light-section .container {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    .light-section h3 {
+        font-size: 2.2rem;
+    }
+
+    .light-section p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    /* Projects – Full Width Cards */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .project-card img {
+        height: 200px;
+    }
+
+    /* Contact – Bigger Inputs, Better Spacing */
+    .contact-form input,
+    .contact-form textarea {
+        padding: 16px;
+        font-size: 1rem;
+    }
+
+    .social-links a {
+        font-size: 2.2rem;
+        margin: 0 15px;
+    }
+
+    /* Footer – Smaller Padding */
+    footer {
+        padding: 60px 16px;
+        font-size: 1rem;
+    }
+
+    /* Nav – Hide on Mobile (Add Hamburger Later if Needed) */
+    nav {
+        display: none;
+    }
+}
+
+/* Extra Small Phones (iPhone SE) */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.8rem !important;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 14px 32px;
+        font-size: 1rem;
+        display: block;
+        margin: 10px auto;
+        width: 90%;
+        text-align: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
