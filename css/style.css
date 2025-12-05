@@ -516,3 +516,40 @@ body.dark #moon-icon {
         max-width: 300px;
     }
 }
+
+/* Final Rounded Logo – Looks $1000 on All Devices */
+.logo-link {
+    display: block;
+    height: 60px;
+}
+
+.logo-img {
+    height: 100%;
+    max-width: 240px;
+    border-radius: 50%;
+    object-fit: contain;
+    background: white;
+    padding: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 3px solid #6366f1;
+    transition: all 0.4s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 20px 50px rgba(99, 102, 241, 0.3);
+}
+
+/* Mobile – Smaller & Perfect */
+@media (max-width: 768px) {
+    .logo-img {
+        max-width: 180px;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        max-width: 150px;
+    }
+}

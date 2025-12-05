@@ -67,50 +67,59 @@
         </div>
     </section>
 
-    <!-- Contact Form + Quick Access -->
+    <!-- Contact Form + Quick Access – Perfect on ALL Devices -->
     <section class="light-section" style="padding:140px 0;">
-        <div class="container"
-            style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;">
+        <div class="container" style="max-width:1300px;margin:0 auto;">
 
-            <!-- Left: Form -->
-            <div data-aos="fade-right">
-                <h2 class="section-title" style="text-align:left;margin-bottom:40px;">Send a Message</h2>
-                <form id="contactForm" class="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required />
-                    <input type="email" name="email" placeholder="Your Email" required />
-                    <input type="text" name="subject" placeholder="Subject (e.g. Job Opportunity)" required />
-                    <textarea name="message" rows="7" placeholder="Your message..." required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-                <p class="contact-info">Or → <strong>didarali1129@gmail.com</strong> | +92 342 0032958</p>
-            </div>
+            <!-- Responsive Grid – Never breaks on any screen -->
+            <div style="display:grid;grid-template-columns:1fr;gap:80px;align-items:start;
+                @media (min-width:768px) {grid-template-columns:1fr 1fr;}">
 
-            <!-- Right: CV Preview + Social -->
-            <div data-aos="fade-left">
-                <h2 class="section-title" style="text-align:left;margin-bottom:40px;">Quick Access</h2>
-                <div class="cv-card">
-                    <img src="img/cv-preview.jpg" alt="CV Preview"
-                        onerror="this.src='https://via.placeholder.com/600x840/6366f1/white?text=CV+PREVIEW'" />
+                <!-- Left: Form -->
+                <div data-aos="fade-right">
+                    <h2 class="section-title" style="font-size:2.8rem;margin-bottom:40px;text-align:left;">
+                        Send a Message
+                    </h2>
+                    <form id="contactForm" class="contact-form">
+                        <input type="text" name="name" placeholder="Your Name" required />
+                        <input type="email" name="email" placeholder="Your Email" required />
+                        <input type="text" name="subject" placeholder="Subject (e.g. Job Opportunity)" required />
+                        <textarea name="message" rows="7" placeholder="Your message..." required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                    <p class="contact-info" style="margin-top:30px;font-size:1.15rem;color:#555;">
+                        Or → <strong>didarali1129@gmail.com</strong> | +92 342 0032958
+                    </p>
+                </div>
 
-                    <!-- All 3 CVs Again -->
-                    <div class="cv-buttons" style="margin:30px 0;">
-                        <a href="Didar_Ali_AI_ML_Engineer.pdf" download class="btn cv-btn ai-cv">AI/ML CV</a>
-                        <a href="Didar_Ali_Computer_Systems_Engineer.pdf" download class="btn cv-btn systems-cv">Systems
-                            CV</a>
-                        <a href="Didar_Ali_Data_Analyst_CV.pdf" download class="btn cv-btn data-cv">Data CV</a>
+                <!-- Right: CV Preview + Social -->
+                <div data-aos="fade-left">
+                    <h2 class="section-title" style="font-size:2.8rem;margin-bottom:40px;text-align:left;">
+                        Quick Access
+                    </h2>
+                    <div class="cv-card">
+                        <img src="img/cv-preview.jpg" alt="CV Preview"
+                            onerror="this.src='https://via.placeholder.com/600x840/6366f1/white?text=CV+PREVIEW'" />
+
+                        <div class="cv-buttons" style="margin:30px 0;">
+                            <a href="Didar_Ali_AI_ML_Engineer.pdf" download class="btn cv-btn ai-cv">AI/ML CV</a>
+                            <a href="Didar_Ali_Computer_Systems_Engineer.pdf" download
+                                class="btn cv-btn systems-cv">Systems CV</a>
+                            <a href="Didar_Ali_Data_Analyst_CV.pdf" download class="btn cv-btn data-cv">Data CV</a>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/didar-ali-deed" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/didar-ali-deed" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:didarali1129@gmail.com"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
 
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/didar-ali-deed" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/didar-ali-deed" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:didarali1129@gmail.com"><i class="fas fa-envelope"></i></a>
-                </div>
             </div>
-
         </div>
     </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
