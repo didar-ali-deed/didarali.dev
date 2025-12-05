@@ -1,6 +1,7 @@
 /* ================================================= */
-/*    DIDAR ALI – FINAL PORTFOLIO 2025 – PERFECT CSS  */
-/*    No warnings | Full compatibility | All 3 pages */
+/*    DIDAR ALI – FINAL 2025 PORTFOLIO CSS           */
+/*    Mobile-First | Perfect on Phone/Tablet/Laptop   */
+/*    No hidden nav | No cutoff | No overflow        */
 /* ================================================= */
 
 * {
@@ -10,7 +11,7 @@
 }
 
 html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -25,35 +26,30 @@ body {
 .container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 20px;
 }
 
-/* ================== HEADER ================== */
+/* ================== HEADER – ALWAYS VISIBLE ================== */
 header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    transition: all 0.4s;
-}
-
-header.scrolled {
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    padding: 16px 0;
 }
 
 .header-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 0;
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 5vw, 2rem);
     font-weight: 900;
     background: linear-gradient(90deg, #6366f1, #0ea5e9);
     -webkit-background-clip: text;
@@ -62,11 +58,19 @@ header.scrolled {
     color: transparent;
 }
 
+nav {
+    display: flex !important;
+    /* NEVER hide nav */
+    gap: clamp(1rem, 4vw, 2.8rem);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 nav a {
-    margin-left: 2.8rem;
     color: #374151;
     font-weight: 600;
     text-decoration: none;
+    font-size: clamp(0.95rem, 3vw, 1.05rem);
     position: relative;
 }
 
@@ -75,7 +79,7 @@ nav a::after {
     position: absolute;
     width: 0;
     height: 3px;
-    bottom: -10px;
+    bottom: -8px;
     left: 50%;
     background: linear-gradient(90deg, #6366f1, #0ea5e9);
     border-radius: 2px;
@@ -93,22 +97,23 @@ nav a.active::after {
     width: 100%;
 }
 
-/* ================== HERO ================== */
+/* ================== HERO – MOBILE FIRST ================== */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 180px 20px 100px;
-    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.82)), url('../img/hero-bg.jpg') center/cover no-repeat fixed;
+    padding: 140px 20px 80px;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('../img/hero-bg.jpg') center/cover no-repeat fixed;
     color: white;
 }
 
 .hero-title {
-    font-size: 5.6rem;
+    font-size: clamp(2.4rem, 8vw, 5.6rem);
     font-weight: 900;
-    line-height: 1.15;
+    line-height: 1.1;
+    margin-bottom: 1rem;
 }
 
 .grad1 {
@@ -141,7 +146,7 @@ nav a.active::after {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    font-size: 6.8rem;
+    font-size: clamp(3rem, 10vw, 6.8rem);
 }
 
 .sep {
@@ -151,24 +156,31 @@ nav a.active::after {
 }
 
 .subtitle {
-    font-size: 2.1rem;
+    font-size: clamp(1.1.1rem, 4vw, 2.1rem);
     color: #e0e7ff;
-    margin: 32px 0 50px;
+    margin: 24px 0 40px;
     font-weight: 500;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Buttons */
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
 .btn-primary,
 .btn-secondary {
-    display: inline-block;
-    padding: 18px 48px;
-    margin: 12px;
+    padding: 16px 32px;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3vw, 1.2rem);
     text-decoration: none;
     transition: all 0.4s;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    min-width: 200px;
 }
 
 .btn-primary {
@@ -177,8 +189,8 @@ nav a.active::after {
 }
 
 .btn-primary:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(99, 102, 241, 0.5);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.5);
 }
 
 .btn-secondary {
@@ -193,17 +205,17 @@ nav a.active::after {
     color: #333;
 }
 
-/* Sections */
+/* ================== SECTIONS ================== */
 .light-section {
     background: #fff;
-    padding: 120px 0;
+    padding: 100px 20px;
 }
 
 .section-title {
-    font-size: 3.4rem;
+    font-size: clamp(2rem, 6vw, 3.4rem);
     font-weight: 800;
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     background: linear-gradient(90deg, #6366f1, #0ea5e9);
     -webkit-background-clip: text;
     background-clip: text;
@@ -211,43 +223,47 @@ nav a.active::after {
     color: transparent;
 }
 
-/* About */
-.about-grid {
+/* Stats – Mobile First */
+.light-section .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: center;
-    gap: 100px;
-    align-items: center;
-}
-
-
-.about-btn {
-    margin-top: 40px;
-    padding: 16px 40px;
-    font-size: 1.2rem;
-}
-
-.about-img img {
-    width: 100%;
-    border-radius: 32px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
-}
-
-/* Skills */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr;
     gap: 40px;
-    font-size: 1.15rem;
-    line-height: 2;
-    margin: 60px 0;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .light-section .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .light-section .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.light-section h3 {
+    font-size: clamp(2rem, 7vw, 3rem);
+    font-weight: 900;
+}
+
+.light-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 /* Projects */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 50px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    }
 }
 
 .project-card {
@@ -255,65 +271,39 @@ nav a.active::after {
     border-radius: 28px;
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-    transition: all 0.6s;
+    transition: transform 0.6s;
 }
 
 .project-card:hover {
-    transform: translateY(-25px);
-    box-shadow: 0 40px 90px rgba(99, 102, 241, 0.35);
+    transform: translateY(-20px);
 }
 
 .project-card img {
     width: 100%;
-    height: 260px;
+    height: 220px;
     object-fit: cover;
-    transition: 0.6s;
-}
-
-.project-card:hover img {
-    transform: scale(1.1);
 }
 
 .project-info {
-    padding: 34px;
+    padding: 30px;
 }
 
 .project-info h3 {
-    font-size: 1.75rem;
+    font-size: 1.7rem;
     color: #6366f1;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
-.project-info a {
-    color: #0ea5e9;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.project-info a:hover {
-    text-decoration: underline;
-}
-
-/* Certifications */
-.certs-list {
-    columns: 2;
-    column-gap: 80px;
-    max-width: 900px;
-    margin: 0 auto;
-    font-size: 1.2rem;
-    line-height: 2.2;
-}
-
-/* Contact */
+/* Contact Form */
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 18px;
-    margin: 12px 0;
+    padding: 16px;
+    margin: 10px 0;
     border-radius: 16px;
     border: 1px solid #ddd;
-    background: rgba(255, 255, 255, 0.8);
-    font-size: 1.1rem;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .contact-form input:focus,
@@ -323,54 +313,23 @@ nav a.active::after {
     box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
 }
 
-.contact-info {
-    margin-top: 32px;
-    font-size: 1.15rem;
-    color: #555;
-}
-
-.cv-card {
-    background: white;
-    padding: 40px;
-    border-radius: 32px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
-    text-align: center;
-}
-
-.cv-card img {
-    width: 100%;
-    border-radius: 24px;
-    margin-bottom: 32px;
-}
-
-.social-links a {
-    margin: 0 25px;
-    color: #6366f1;
-    font-size: 3rem;
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    transform: translateY(-8px);
-}
-
 /* Footer */
 footer {
     background: #0f172a;
     color: #94a3b8;
     text-align: center;
-    padding: 90px 20px;
-    font-size: 1.15rem;
+    padding: 80px 20px;
+    font-size: 1.1rem;
 }
 
-/* Dark Mode */
+/* ================== DARK MODE ================== */
 body.dark {
     background: #0f172a !important;
     color: #e2e8f0;
 }
 
 body.dark .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95)), url('../img/hero-bg.jpg') center/cover no-repeat fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.98)), url('../img/hero-bg.jpg') center/cover no-repeat fixed;
 }
 
 body.dark .light-section {
@@ -379,7 +338,7 @@ body.dark .light-section {
 
 body.dark header {
     background: rgba(15, 23, 42, 0.95);
-    border-bottom-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.08);
 }
 
 body.dark .logo {
@@ -395,16 +354,8 @@ body.dark nav a.active {
     color: #a78bfa;
 }
 
-body.dark .project-card,
-body.dark .cv-card {
+body.dark .project-card {
     background: #1e293b;
-}
-
-body.dark input,
-body textarea {
-    background: rgba(30, 41, 59, 0.8) !important;
-    border-color: #475569 !important;
-    color: #e2e8f0;
 }
 
 /* Dark Mode Toggle */
@@ -449,285 +400,29 @@ body.dark #moon-icon {
     transform: scale(1.18);
 }
 
-/* Responsive */
-@media (max-width:1024px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 70px;
-    }
-
-    .hero-title {
-        font-size: 4.8rem;
-    }
-
-    .grad4 {
-        font-size: 5.8rem;
-    }
-}
-
-@media (max-width:768px) {
-    nav {
-        display: none;
-    }
-
-    .hero {
-        padding-top: 160px;
-    }
-
-    .hero-title {
-        font-size: 3.6rem;
-    }
-
-    .hero-title br {
-        display: none;
-    }
-
-    .grad4 {
-        font-size: 4.6rem;
-    }
-
-    .subtitle {
-        font-size: 1.8rem;
-    }
-}
-
-/* Fix About & Contact hero in dark mode – clean & professional */
-.about-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)), #0f172a;
-    padding: 200px 20px 140px;
-}
-
-.about-hero h1,
-.about-hero .subtitle {
-    color: white !important;
-    background: none !important;
-    -webkit-text-fill-color: unset !important;
-}
-
-/* Fix About page paragraph contrast – perfect in light & dark */
-.about-paragraph {
-    font-size: 1.28rem;
-    line-height: 2;
-    color: #2d2d2d;
-    /* Strong dark in light mode */
-    margin-bottom: 20px;
-}
-
-/* Dark mode – make text bright white */
-body.dark .about-paragraph {
-    color: #f1f5f9 !important;
-    /* Clean white in dark mode */
-}
-
-
-/* Mobile Fixes – Perfect on Phones (iPhone/Android) */
-@media (max-width: 768px) {
-
-    /* Header – Smaller & No Overlap */
-    header {
-        padding: 12px 0;
-    }
-
-    .logo {
-        font-size: 1.6rem;
-    }
-
-    .hero {
-        padding-top: 120px !important;
-        padding: 120px 16px 80px;
-    }
-
-    /* Hero – Smaller Text, Better Stacking */
-    .hero-title {
-        font-size: 3.2rem !important;
-        line-height: 1.1;
-    }
-
-    .grad4 {
-        font-size: 3.8rem !important;
-    }
-
-    .hero-title br {
-        display: none;
-    }
-
-    /* Stack on one line */
-    .subtitle {
-        font-size: 1.4rem;
-        line-height: 1.4;
-    }
-
-    /* Stats – Stack to 1 Column, Bigger Text */
-    .light-section .container {
-        grid-template-columns: 1fr !important;
-        gap: 30px;
-    }
-
-    .light-section h3 {
-        font-size: 2.2rem;
-    }
-
-    .light-section p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-    }
-
-    /* Projects – Full Width Cards */
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .project-card img {
-        height: 200px;
-    }
-
-    /* Contact – Bigger Inputs, Better Spacing */
-    .contact-form input,
-    .contact-form textarea {
-        padding: 16px;
-        font-size: 1rem;
-    }
-
-    .social-links a {
-        font-size: 2.2rem;
-        margin: 0 15px;
-    }
-
-    /* Footer – Smaller Padding */
-    footer {
-        padding: 60px 16px;
-        font-size: 1rem;
-    }
-
-    /* Nav – Hide on Mobile (Add Hamburger Later if Needed) */
-    nav {
-        display: none;
-    }
-}
-
-/* Extra Small Phones (iPhone SE) */
+/* Extra Mobile Safety */
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 2.8rem !important;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        padding: 14px 32px;
-        font-size: 1rem;
-        display: block;
-        margin: 10px auto;
-        width: 90%;
-        text-align: center;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-}
-
-
-/* Ultimate Mobile Fix – No More Cutoff/PDF Look */
-@media (max-width: 768px) {
-    body {
-        font-size: 16px;
-        -webkit-text-size-adjust: 100%;
-    }
-
     .hero {
-        padding-top: 100px !important;
-        padding: 100px 12px 60px;
-        min-height: 80vh;
+        padding-top: 120px;
     }
 
     .hero-title {
-        font-size: 2.8rem !important;
-        line-height: 1.1;
-        word-break: break-word;
+        font-size: 2.4rem !important;
     }
 
-    .grad1,
-    .grad2,
-    .grad3,
     .grad4 {
-        font-size: inherit !important;
-    }
-
-    .hero-title br {
-        display: none;
+        font-size: 3rem !important;
     }
 
     .subtitle {
-        font-size: 1.2rem !important;
-        line-height: 1.3;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        width: 100%;
-        max-width: 280px;
-        margin: 10px 0;
-    }
-
-    /* Stats – Single Column, No Squeeze */
-    .light-section .container {
-        grid-template-columns: 1fr !important;
-        gap: 24px;
-    }
-
-    .light-section h3 {
-        font-size: 2rem !important;
-    }
-
-    .light-section p,
-    .light-section span {
         font-size: 1rem !important;
-        line-height: 1.5;
     }
 
-    /* Projects – Stack Vertically */
-    .projects-grid {
-        grid-template-columns: 1fr !important;
-        gap: 24px;
+    nav {
+        gap: 12px;
     }
 
-    .project-card img {
-        height: 180px !important;
-    }
-
-    /* Contact – Bigger Inputs */
-    .contact-form input,
-    .contact-form textarea {
-        padding: 14px;
-        font-size: 16px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Footer – Compact */
-    footer {
-        padding: 40px 12px;
+    nav a {
         font-size: 0.9rem;
-    }
-}
-
-/* iPhone-Specific (Fixes Safari Cutoff) */
-@supports (-webkit-touch-callout: none) {
-    @media (max-width: 768px) {
-        html {
-            -webkit-text-size-adjust: 100%;
-        }
-
-        body {
-            overflow-x: hidden;
-        }
     }
 }
