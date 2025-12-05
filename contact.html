@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact – Didar Ali</title>
+    <meta name="description"
+        content="Contact Didar Ali – B.Sc. CSE 2025 | Open to AI/ML, Data & Systems Engineering roles" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+</head>
+
+<body>
+
+    <div id="theme-toggle" title="Toggle dark mode">
+        <div><i class="fas fa-sun" id="sun-icon"></i><i class="fas fa-moon" id="moon-icon"></i></div>
+    </div>
+
+    <header>
+        <div class="container header-inner">
+            <h1 class="logo">DIDAR ALI</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" data-aos="fade-down">
+        <div class="container hero-content">
+            <h1>Let's Build Together</h1>
+            <p class="subtitle">Open to full-time roles in<br><strong>AI/ML • Data • Systems Engineering</strong></p>
+            <div class="hero-buttons">
+                <a href="mailto:didarali1129@gmail.com" class="btn btn-primary">Email Me Now</a>
+                <a href="Didar_Ali_CV.pdf" download class="btn btn-secondary">Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="light-section" style="padding:140px 0;">
+        <div class="container"
+            style="max-width:1300px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:100px;">
+
+            <div data-aos="fade-right">
+                <h2 class="section-title" style="text-align:left; margin-bottom:40px;">Send a Message</h2>
+                <form id="contactForm" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input type="email" name="email" placeholder="Your Email" required />
+                    <input type="text" name="subject" placeholder="Subject (e.g. Job Opportunity)" required />
+                    <textarea name="message" rows="7" placeholder="Your message..." required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                <p class="contact-info">Or → <strong>didarali1129@gmail.com</strong> | +92 342 0032958</p>
+            </div>
+
+            <div data-aos="fade-left">
+                <h2 class="section-title" style="text-align:left; margin-bottom:40px;">Quick Access</h2>
+                <div class="cv-card">
+                    <img src="img/cv-preview.jpg" alt="CV Preview"
+                        onerror="this.src='https://via.placeholder.com/600x840/6366f1/white?text=CV'" />
+                    <a href="Didar_Ali_CV.pdf" download class="btn btn-primary">Download Full CV (PDF)</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/didar-ali-deed" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/didar-ali-deed" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:didarali1129@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Didar Ali • Made in Pakistan</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        const lenis = new Lenis({ duration: 1.6, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+        function raf(t) { lenis.raf(t); requestAnimationFrame(raf); } requestAnimationFrame(raf);
+        AOS.init({ once: true, duration: 1000 });
+
+        const t = document.getElementById('theme-toggle'), s = document.getElementById('sun-icon'), m = document.getElementById('moon-icon');
+        if (localStorage.theme === 'dark' || (localStorage.theme !== 'light' && matchMedia('(prefers-color-scheme:dark)').matches)) {
+            document.body.classList.add('dark'); s.style.display = 'none'; m.style.display = 'block';
+        }
+        t.onclick = () => {
+            document.body.classList.toggle('dark');
+            document.body.classList.contains('dark') ? (s.style.display = 'none', m.style.display = 'block', localStorage.theme = 'dark')
+                : (s.style.display = 'block', m.style.display = 'none', localStorage.theme = 'light');
+        };
+
+        document.getElementById('contactForm').onsubmit = e => {
+            e.preventDefault();
+            const f = e.target;
+            window.location.href = `mailto:didarali1129@gmail.com?subject=${encodeURIComponent(f.subject.value)}&body=${encodeURIComponent(`Name: ${f.name.value}\nEmail: ${f.email.value}\n\n${f.message.value}`)}`;
+        };
+    </script>
+</body>
+
+</html>
