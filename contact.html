@@ -3,11 +3,9 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <title>Contact – Didar Ali</title>
-    <meta name="description"
-        content="Contact Didar Ali – B.Sc. CSE 2025 | Open to AI/ML, Data & Systems Engineering roles" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact – Didar Ali | AI/ML & Systems Engineer</title>
+    <meta name="description" content="Contact Didar Ali – B.Sc. CSE 2025 | Open to AI/ML, Systems & Data roles" />
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -18,10 +16,12 @@
 
 <body>
 
+    <!-- Dark Mode Toggle -->
     <div id="theme-toggle" title="Toggle dark mode">
         <div><i class="fas fa-sun" id="sun-icon"></i><i class="fas fa-moon" id="moon-icon"></i></div>
     </div>
 
+    <!-- Header -->
     <header>
         <div class="container header-inner">
             <h1 class="logo">DIDAR ALI</h1>
@@ -33,21 +33,45 @@
         </div>
     </header>
 
+    <!-- Hero -->
     <section class="hero" data-aos="fade-down">
         <div class="container hero-content">
             <h1>Let's Build Together</h1>
-            <p class="subtitle">Open to full-time roles in<br><strong>AI/ML • Data • Systems Engineering</strong></p>
+            <p class="subtitle">
+                Open to full-time roles in<br>
+                <strong>AI/ML • Systems Engineering • Data Analytics</strong>
+            </p>
+
+            <!-- All 3 Real CVs – Beautiful Buttons -->
+            <div class="cv-buttons cv-buttons-hero">
+                <a href="Didar_Ali_AI_ML_Engineer.pdf" download class="btn cv-btn ai-cv">
+                    AI / Machine Learning Engineer CV
+                </a>
+                <a href="Didar_Ali_Computer_Systems_Engineer.pdf" download class="btn cv-btn systems-cv">
+                    Computer Systems Engineer CV
+                </a>
+                <a href="Didar_Ali_Data_Analyst_CV.pdf" download class="btn cv-btn data-cv">
+                    Data Analyst CV
+                </a>
+            </div>
+
             <div class="hero-buttons">
                 <a href="mailto:didarali1129@gmail.com" class="btn btn-primary">Email Me Now</a>
-                <a href="Didar_Ali_CV.pdf" download class="btn btn-secondary">Download CV</a>
             </div>
+
+            <p style="margin-top:50px; font-size:1.3rem; color:#e0e7ff; opacity:0.9;">
+                Final-Year Project: <strong>83.2% accuracy</strong> using Wav2Vec2 transformer<br>
+                B.Sc. Computer Systems Engineering – UET Peshawar (2025)
+            </p>
         </div>
     </section>
 
+    <!-- Contact Form + Quick Access -->
     <section class="light-section" style="padding:140px 0;">
         <div class="container"
             style="max-width:1300px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:100px;">
 
+            <!-- Left: Form -->
             <div data-aos="fade-right">
                 <h2 class="section-title" style="text-align:left; margin-bottom:40px;">Send a Message</h2>
                 <form id="contactForm" class="contact-form">
@@ -60,12 +84,18 @@
                 <p class="contact-info">Or → <strong>didarali1129@gmail.com</strong> | +92 342 0032958</p>
             </div>
 
+            <!-- Right: CV Preview + Social -->
             <div data-aos="fade-left">
                 <h2 class="section-title" style="text-align:left; margin-bottom:40px;">Quick Access</h2>
                 <div class="cv-card">
                     <img src="img/cv-preview.jpg" alt="CV Preview"
                         onerror="this.src='https://via.placeholder.com/600x840/6366f1/white?text=CV'" />
-                    <a href="Didar_Ali_CV.pdf" download class="btn btn-primary">Download Full CV (PDF)</a>
+                    <div class="cv-buttons" style="margin:30px 0;">
+                        <a href="Didar_Ali_AI_ML_Engineer.pdf" download class="btn cv-btn ai-cv">AI/ML CV</a>
+                        <a href="Didar_Ali_Computer_Systems_Engineer.pdf" download class="btn cv-btn systems-cv">Systems
+                            CV</a>
+                        <a href="Didar_Ali_Data_Analyst_CV.pdf" download class="btn cv-btn data-cv">Data CV</a>
+                    </div>
                 </div>
                 <div class="social-links">
                     <a href="https://linkedin.com/in/didar-ali-deed" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -77,12 +107,14 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <p>© 2025 Didar Ali • Made in Pakistan</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
