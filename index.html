@@ -9,35 +9,39 @@
     <meta name="description"
         content="Didar Ali – B.Sc. Computer Systems Engineering, UET Peshawar 2025 | AI/ML • Systems • Data | Open to full-time roles" />
 
+    <meta property="og:title" content="Didar Ali - AI/ML & Systems Engineer">
+    <meta property="og:description"
+        content="Portfolio of Didar Ali. B.Sc. CSE 2025. 79% Accuracy on Wav2Vec2 FYP. Open to roles.">
+    <meta property="og:image" content="https://yourwebsite.com/img/cv-preview.jpg">
+    <meta property="og:type" content="website">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
-    <!-- Dark Mode Toggle -->
     <div id="theme-toggle" title="Toggle dark mode">
         <div><i class="fas fa-sun" id="sun-icon"></i><i class="fas fa-moon" id="moon-icon"></i></div>
     </div>
 
-    <!-- Header -->
     <header>
         <div class="container header-inner">
             <a href="index.html" class="logo-link">
                 <img src="img/logo.png" alt="Didar Ali" class="logo-img">
             </a>
             <nav>
-                <a href="index.html">Home</a>
+                <a href="index.html" class="active">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero -->
     <section class="hero" data-aos="fade-down">
         <div class="container hero-content">
             <h1 class="hero-title">
@@ -60,35 +64,34 @@
         </div>
     </section>
 
-    <!-- Stats -->
     <section class="light-section" data-aos="fade-up">
-        <div class="container"
-            style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:50px; text-align:center;">
+        <div class="container skills-grid" style="text-align:center;">
             <div>
-                <h3 style="font-size:3rem;font-weight:900;color:#6366f1">79%</h3>
-                <p style="font-size:1.3rem;color:#555">Best Model Accuracy<br><small>Wav2Vec2 Speech Emotion</small></p>
+                <h3 style="font-size:3rem;font-weight:900;color:var(--primary)">79%</h3>
+                <p style="font-size:1.3rem;color:var(--text-muted)">Best Model Accuracy<br><small>Wav2Vec2 Speech
+                        Emotion</small></p>
             </div>
             <div>
-                <h3 style="font-size:3rem;font-weight:900;color:#0ea5e9">3</h3>
-                <p style="font-size:1.35rem;color:#555;line-height:1.8"><strong>Key Projects</strong><br>
-                    <span style="font-size:1.1rem;color:#666">
+                <h3 style="font-size:3rem;font-weight:900;color:var(--secondary)">3</h3>
+                <p style="font-size:1.35rem;color:var(--text-muted);line-height:1.8"><strong>Key Projects</strong><br>
+                    <span style="font-size:1.1rem;color:var(--text-light)">
                         • AI Health Super App<br>• Speech Emotion Recognition<br>• Virtual File System (C/Linux)
                     </span>
                 </p>
             </div>
             <div>
-                <h3 style="font-size:3rem;font-weight:900;color:#6366f1">4</h3>
-                <p style="font-size:1.35rem;color:#555;line-height:1.8"><strong>Certificates</strong><br>
-                    <span style="font-size:1.1rem;color:#666">
+                <h3 style="font-size:3rem;font-weight:900;color:var(--primary)">4</h3>
+                <p style="font-size:1.35rem;color:var(--text-muted);line-height:1.8"><strong>Certificates</strong><br>
+                    <span style="font-size:1.1rem;color:var(--text-light)">
                         • Google Data Analytics<br>• Google Cybersecurity<br>• AI For Everyone<br>• Programming for
                         Everybody
                     </span>
                 </p>
             </div>
             <div>
-                <h3 style="font-size:3rem;font-weight:900;color:#0ea5e9">2025</h3>
-                <p style="font-size:1.35rem;color:#555;line-height:1.8"><strong>B.Sc. Graduate</strong><br>
-                    <span style="font-size:1.15rem;color:#666">
+                <h3 style="font-size:3rem;font-weight:900;color:var(--secondary)">2025</h3>
+                <p style="font-size:1.35rem;color:var(--text-muted);line-height:1.8"><strong>B.Sc. Graduate</strong><br>
+                    <span style="font-size:1.15rem;color:var(--text-light)">
                         Computer Systems Engineering<br>UET Peshawar, Pakistan
                     </span>
                 </p>
@@ -96,31 +99,15 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>© 2025 Didar Ali • Made with passion in Pakistan</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        const lenis = new Lenis({ duration: 1.6, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
-        function raf(t) { lenis.raf(t); requestAnimationFrame(raf); } requestAnimationFrame(raf);
-        AOS.init({ once: true, duration: 1200 });
-
-        const t = document.getElementById('theme-toggle'), s = document.getElementById('sun-icon'), m = document.getElementById('moon-icon');
-        if (localStorage.theme === 'dark' || (localStorage.theme !== 'light' && matchMedia('(prefers-color-scheme:dark)').matches)) {
-            document.body.classList.add('dark'); s.style.display = 'none'; m.style.display = 'block';
-        }
-        t.onclick = () => {
-            document.body.classList.toggle('dark');
-            if (document.body.classList.contains('dark')) { s.style.display = 'none'; m.style.display = 'block'; localStorage.theme = 'dark'; }
-            else { s.style.display = 'block'; m.style.display = 'none'; localStorage.theme = 'light'; }
-        };
-    </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
