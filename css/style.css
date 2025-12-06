@@ -236,6 +236,15 @@ nav a.active::after {
     font-size: clamp(2.6rem, 10vw, 5.8rem);
     font-weight: 900;
     line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.hero-title-text {
+    background: var(--grad-main);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 .subtitle {
@@ -247,40 +256,8 @@ nav a.active::after {
     max-width: 800px;
 }
 
-.grad1 {
-    background: linear-gradient(90deg, #818cf8, #60a5fa);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+/* Removed old grad classes as they are replaced by .hero-title-text */
 
-.grad2 {
-    background: linear-gradient(90deg, #c084fc, #818cf8);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.grad3 {
-    background: linear-gradient(90deg, #34d399, #10b981);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.grad4 {
-    background: var(--grad-main);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: clamp(3.2rem, 11vw, 6.8rem);
-}
-
-.sep {
-    color: #e0e7ff;
-    margin: 0 12px;
-    opacity: 0.9;
-}
 
 /* --------------------------------------------------- */
 /* 7. BUTTONS & CALLS TO ACTION                        */
@@ -386,35 +363,54 @@ nav a.active::after {
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
 }
 
-.skills-grid {
-    /* Responsive Grid for Skills/Stats - Min 200px wide per column */
+/* Reworked Skills Section */
+.skills-grouping {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin: 60px 0;
-    text-align: center;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 60px;
 }
 
-.skills-grid>div {
-    padding: 20px;
-    border-radius: 12px;
+.skill-category {
     background: var(--bg-card);
+    border-radius: 16px;
+    padding: 30px;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.skills-grid>div:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-card);
-}
-
-.skills-grid strong {
+.skill-category h3 {
+    font-size: 1.8rem;
     font-weight: 700;
-    color: var(--primary);
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill-category li {
+    background: var(--bg-input);
+    color: var(--text-main);
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.skill-category li:hover {
+    background: var(--primary);
+    color: white;
 }
 
 /* --------------------------------------------------- */
-/* 10. PROJECT CARDS                                   */
+/* 10. PROJECT CARDS (Updated for Structure)           */
 /* --------------------------------------------------- */
 .projects-grid {
     display: grid;
@@ -451,19 +447,125 @@ nav a.active::after {
 .project-info h3 {
     font-size: 1.6rem;
     color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.project-info .role,
+.project-info .metric {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--secondary);
+    display: block;
     margin-bottom: 12px;
 }
 
 .project-info p {
     color: var(--text-muted);
+    margin-bottom: 15px;
 }
 
-.project-info a {
+.tech-stack {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-top: 10px;
+    display: block;
+}
+
+.project-links a {
     display: inline-block;
+    margin-right: 15px;
     margin-top: 15px;
     color: var(--secondary);
     font-weight: 700;
+    font-size: 1rem;
 }
+
+.project-links a:hover {
+    color: var(--primary);
+}
+
+/* --------------------------------------------------- */
+/* 10b. TESTIMONIALS SECTION                           */
+/* --------------------------------------------------- */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.testimonial-card {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 16px;
+    border-left: 5px solid var(--primary);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    border-left-color: var(--secondary);
+}
+
+.testimonial-quote {
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text-main);
+    margin-bottom: 15px;
+}
+
+.testimonial-author {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.05rem;
+}
+
+.testimonial-title {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* --------------------------------------------------- */
+/* 10c. BLOG CARDS (Placeholder)                       */
+/* --------------------------------------------------- */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.blog-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-card h4 {
+    color: var(--secondary);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.blog-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.blog-card .read-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
 
 /* --------------------------------------------------- */
 /* 11. CONTACT FORM & CV PREVIEW                       */
@@ -640,18 +742,18 @@ body.dark #moon-icon {
         margin-bottom: 40px;
     }
 
-    .skills-grid {
-        grid-template-columns: 1fr;
-        /* Stack skills on tiny screens */
-        gap: 20px;
-    }
-
     .about-paragraph {
         font-size: 1rem;
     }
 
     .project-info {
         padding: 24px;
+    }
+
+    .testimonials-grid,
+    .projects-grid,
+    .skills-grouping {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -675,6 +777,14 @@ body.dark #moon-icon {
 
     /* Projects in two columns */
     .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skills-grouping {
         grid-template-columns: 1fr 1fr;
     }
 
@@ -705,44 +815,13 @@ body.dark #moon-icon {
     .contact-layout {
         grid-template-columns: 3fr 2fr;
     }
-}
 
-/* All gradient text classes now explicitly include the standard 'background-clip' property */
-.grad1 {
-    background: linear-gradient(90deg, #818cf8, #60a5fa);
-    -webkit-background-clip: text;
-    background-clip: text;
-    /* FIX: Added standard property */
-    -webkit-text-fill-color: transparent;
-}
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* Three columns for desktop */
+    }
 
-.grad2 {
-    background: linear-gradient(90deg, #c084fc, #818cf8);
-    -webkit-background-clip: text;
-    background-clip: text;
-    /* FIX: Added standard property */
-    -webkit-text-fill-color: transparent;
-}
-
-.grad3 {
-    background: linear-gradient(90deg, #34d399, #10b981);
-    -webkit-background-clip: text;
-    background-clip: text;
-    /* FIX: Added standard property */
-    -webkit-text-fill-color: transparent;
-}
-
-.grad4 {
-    background: var(--grad-main);
-    -webkit-background-clip: text;
-    background-clip: text;
-    /* FIX: Added standard property */
-    -webkit-text-fill-color: transparent;
-    font-size: clamp(3.2rem, 11vw, 6.8rem);
-}
-
-.sep {
-    color: #e0e7ff;
-    margin: 0 12px;
-    opacity: 0.9;
+    .skills-grouping {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }

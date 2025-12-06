@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study: Vocal Sentiment Transformer – Didar Ali</title>
+    <meta name="description"
+        content="Detailed case study of the Speech Emotion Recognition (SER) project using Wav2Vec2, achieving 79% accuracy on noisy audio data." />
+
+    <meta property="og:title" content="Case Study: Vocal Sentiment Transformer">
+    <meta property="og:description" content="Detailed analysis of the 79% accuracy Wav2Vec2 SER model.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        .case-study-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .case-study-content h2 {
+            margin-top: 50px;
+            font-size: 2.2rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .case-study-content h3 {
+            margin-top: 30px;
+            font-size: 1.6rem;
+            color: var(--secondary);
+        }
+
+        .case-study-content p,
+        .case-study-content ul {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .case-study-content ul {
+            padding-left: 20px;
+        }
+
+        .metric-box {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--primary);
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .metric-box h4 {
+            font-size: 3rem;
+            color: var(--primary);
+            font-weight: 900;
+        }
+
+        .metric-box p {
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" alt="Didar Ali" class="logo-img">
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About & Projects</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" data-aos="fade-down">
+        <div class="container hero-content">
+            <h1>Case Study: Vocal Sentiment Transformer</h1>
+            <p class="subtitle">Speech Emotion Recognition using Wav2Vec2 Transformer</p>
+        </div>
+    </section>
+
+    <section class="light-section">
+        <div class="container">
+            <div class="case-study-content">
+
+                <h2>Project Overview</h2>
+                <p>
+                    In human–computer interaction, recognizing emotions from raw speech remains a core challenge.
+                    Traditional CNN-based models struggle on real-world noisy audio, failing to capture contextual cues
+                    such as tone variation and emphasis. This project applies the transformer architecture
+                    Wav2Vec2, pre-trained on 53,000+ hours of audio, to fine-tune for Speech Emotion Recognition
+                    achieving 79% accuracy on real-world noisy speech data (RAVDESS + TESS).
+                </p>
+
+                <div class="metric-box">
+                    <h4>79%</h4>
+                    <p>Validation Accuracy (Noisy Environment)</p>
+                </div>
+
+                <h2>Problem Statement</h2>
+                <p>
+                    Real-world SER systems fail under:
+                    background noise, multi-speaker dialogue, changing emotion intensity, or short utterances.
+                    The aim was to build a model capable of:
+                </p>
+                <ul>
+                    <li>High accuracy on noisy & real speech</li>
+                    <li>Minimal feature engineering</li>
+                    <li>Efficient deployment for production apps</li>
+                </ul>
+
+                <h2>Model Architecture</h2>
+                <p>
+                    Instead of using MFCC + CNN/LSTM manually extracted features, this project uses a feature-less
+                    pipeline powered by self-attention:
+                </p>
+                <ul>
+                    <li>Base Model: Facebook Wav2Vec2 pre-trained checkpoint</li>
+                    <li>Fine-tuned classification head added (7 emotions)</li>
+                    <li>Training with label masking + gradient checkpointing</li>
+                </ul>
+
+                <h2>Datasets and Preprocessing</h2>
+                <ul>
+                    <li>TESS (Toronto Emotional Speech Set)</li>
+                    <li>RAVDESS Emotional Speech Dataset</li>
+                    <li>Added noise augmentation (airport, restaurant, fan sound)</li>
+                    <li>Resampled to 16kHz, 1 channel</li>
+                </ul>
+
+                <h2>Results</h2>
+                <p>
+                    The transformer-based model handled contextual speech variations better than CNN/MLP baselines.
+                    The model achieved significant improvement in anger vs. neutral classifications—previously the most
+                    misclassified categories.
+                </p>
+
+                <h2>Deployment</h2>
+                <ul>
+                    <li>API: FastAPI</li>
+                    <li>Frontend: Streamlit UI</li>
+                    <li>Containerization: Docker</li>
+                </ul>
+
+                <h2>What I Learned</h2>
+                <ul>
+                    <li>Self-attention is superior to convolution for sequential audio</li>
+                    <li>Noise augmentation is crucial before deployment</li>
+                    <li>Model inference speed must be optimized for real-time apps</li>
+                </ul>
+
+                <p>Source Code:</p>
+                <a href="https://github.com/didar-ali-deed/Vocal-Sentiment-Transformer-Based-Speech-Emotion-Recognition"
+                    target="_blank">GitHub Repository</a>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Didar Ali • Made in Pakistan</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

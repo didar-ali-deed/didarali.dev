@@ -4,18 +4,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact – Didar Ali | AI/ML & Systems Engineer</title>
-    <meta name="description"
-        content="Contact Didar Ali – B.Sc. CSE 2021–2025 | 79% Wav2Vec2 | Open to AI/ML, Systems & Data roles" />
 
-    <meta property="og:title" content="Contact Didar Ali">
-    <meta property="og:description" content="Get in touch for AI/ML and Systems Engineering roles.">
+    <title>Contact – Didar Ali | AI/ML Engineer & Systems Developer</title>
+    <meta name="description"
+        content="Contact Didar Ali – Machine Learning, Deep Learning, Systems & Data Engineering. Open to work and collaboration opportunities." />
+
+    <meta property="og:title" content="Contact – Didar Ali" />
+    <meta property="og:description" content="Get in touch for AI/ML, Systems Engineering and Data roles." />
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
+        })();
+    </script>
 </head>
 
 <body>
@@ -27,11 +35,12 @@
     <header>
         <div class="container header-inner">
             <a href="index.html" class="logo-link">
-                <img src="img/logo.png" alt="Didar Ali" class="logo-img">
+                <img src="img/logo.png" alt="Didar Ali Logo" class="logo-img">
             </a>
             <nav>
                 <a href="index.html">Home</a>
-                <a href="about.html">About</a>
+                <a href="about.html">About & Projects</a>
+                <a href="blog.html">Blog</a>
                 <a href="contact.html" class="active">Contact</a>
             </nav>
         </div>
@@ -41,9 +50,10 @@
         <div class="container hero-content">
             <h1>Let's Build Together</h1>
             <p class="subtitle">
-                Open to full-time roles in<br>
-                <strong>AI/ML • Systems Engineering • Data Analytics</strong>
+                Open to full-time roles in <strong>AI/ML</strong>, <strong>Systems Engineering</strong>, and
+                <strong>Data Analytics</strong>.
             </p>
+
             <div class="cv-buttons cv-buttons-hero">
                 <a href="Didar_Ali_AI_ML_Engineer.pdf" download class="btn cv-btn ai-cv">AI / ML Engineer CV</a>
                 <a href="Didar_Ali_Computer_Systems_Engineer.pdf" download class="btn cv-btn systems-cv">Systems
@@ -72,12 +82,13 @@
                     </form>
 
                     <p class="contact-info">
-                        Or → <strong>didarali1129@gmail.com</strong> | +92 342 0032958
+                        Or reach out directly → <strong>didarali1129@gmail.com</strong> | +92 342 0032958
                     </p>
                 </div>
 
                 <div data-aos="fade-left">
                     <h2 class="section-title" style="text-align:left; margin-bottom:40px;">Quick Access</h2>
+
                     <div class="cv-card">
                         <img src="img/cv-preview.jpg" alt="CV Preview"
                             onerror="this.src='https://via.placeholder.com/600x840/6366f1/white?text=CV+PREVIEW'" />
@@ -112,6 +123,26 @@
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="js/script.js"></script>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            emailjs.send("YOUR_EMAILJS_SERVICE_ID", "YOUR_EMAILJS_TEMPLATE_ID", {
+                name: this.name.value,
+                email: this.email.value,
+                subject: this.subject.value,
+                message: this.message.value,
+            })
+                .then(() => {
+                    alert("Message sent successfully!");
+                    this.reset();
+                })
+                .catch(() => {
+                    alert("Error! Could not send message.");
+                });
+        });
+    </script>
 </body>
 
 </html>
