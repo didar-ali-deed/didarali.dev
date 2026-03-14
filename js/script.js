@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
         hamburger.addEventListener('click', () => {
             const open = navMenu.classList.toggle('open');
             hamburger.classList.toggle('active', open);
-            document.body.style.overflow = open ? 'hidden' : '';
         });
 
         // Close on nav link click
@@ -65,8 +64,17 @@ document.addEventListener("DOMContentLoaded", () => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('open');
                 hamburger.classList.remove('active');
-                document.body.style.overflow = '';
             });
+        });
+
+        // Close when tapping outside the nav
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('open') &&
+                !navMenu.contains(e.target) &&
+                !hamburger.contains(e.target)) {
+                navMenu.classList.remove('open');
+                hamburger.classList.remove('active');
+            }
         });
     }
 

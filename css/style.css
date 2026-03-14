@@ -1209,30 +1209,42 @@ body.dark .timeline-tag.current {
     .hamburger { display: flex; }
 
     nav {
+        /* Always in the DOM — hidden by sliding off-screen to the right */
+        display: flex !important;
         position: fixed;
-        top: 69px; /* sit just below the header */
-        left: 0;
+        top: 69px;
         right: 0;
-        bottom: 0;
-        background: var(--bg-body);
+        width: min(280px, 80vw);
+        height: calc(100vh - 69px);
+        background: var(--bg-card);
+        border-left: 1px solid var(--border-color);
+        box-shadow: -12px 0 40px rgba(0, 0, 0, 0.12);
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 36px;
+        gap: 28px;
         z-index: 1015;
-        display: none;
-        padding: 0 20px 40px;
+        padding: 0 24px 40px;
         overflow-y: auto;
+        /* Hidden off-screen; no display toggle = no stuck state */
+        transform: translateX(100%);
+        transition: transform 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     nav.open {
-        display: flex;
+        transform: translateX(0);
     }
 
     nav a {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-weight: 700;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border-color);
     }
+
+    nav a:last-child { border-bottom: none; }
 
     nav a::after { display: none; }
 }
