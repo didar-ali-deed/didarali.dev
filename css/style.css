@@ -125,7 +125,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 1020;
     background: var(--bg-header);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
@@ -1210,15 +1210,19 @@ body.dark .timeline-tag.current {
 
     nav {
         position: fixed;
-        inset: 0;
+        top: 69px; /* sit just below the header */
+        left: 0;
+        right: 0;
+        bottom: 0;
         background: var(--bg-body);
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 36px;
-        z-index: 1005;
+        z-index: 1015;
         display: none;
-        padding: 0;
+        padding: 0 20px 40px;
+        overflow-y: auto;
     }
 
     nav.open {
