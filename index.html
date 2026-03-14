@@ -3,31 +3,43 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6366f1" />
 
-    <title>Didar Ali – AI/ML Engineer | Computer Systems | Data Analytics</title>
-    <meta name="description"
-        content="AI/ML Engineer and Computer Systems Engineering graduate specializing in Transformers (Wav2Vec2), C/Linux systems, and data-driven solutions. Open to full-time roles.">
+    <title>Didar Ali – AI Engineer | ML Researcher | Computer Systems</title>
+    <meta name="description" content="Didar Ali – AI Engineer I at XFlow Research Inc. Specializing in transformer-based ML models, deep learning, and systems engineering. UET Peshawar graduate.">
 
-    <meta property="og:title" content="Portfolio – Didar Ali | AI/ML, Systems & Data Engineering">
-    <meta property="og:description"
-        content="Portfolio showcasing AI/ML, Speech Emotion Recognition (79% Accuracy), Data Analytics and System-level software engineering projects.">
+    <meta property="og:title" content="Didar Ali – AI Engineer | XFlow Research Inc">
+    <meta property="og:description" content="Portfolio showcasing AI/ML, Speech Emotion Recognition (79% accuracy), and systems engineering.">
     <meta property="og:image" content="img/cv-preview.jpg">
     <meta property="og:type" content="website">
+    <link rel="canonical" href="index.html">
+
+    <link rel="icon" href="img/logo.png" type="image/png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="img/logo.png" alt="Loading" class="preloader-logo">
+    </div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- Theme Toggle -->
     <div id="theme-toggle" title="Toggle light/dark mode">
         <div>
             <i class="fas fa-sun" id="sun-icon"></i>
@@ -40,7 +52,10 @@
             <a href="index.html" class="logo-link">
                 <img src="img/logo.png" alt="Didar Ali" class="logo-img" loading="lazy">
             </a>
-            <nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="nav-menu">
                 <a href="index.html" class="active">Home</a>
                 <a href="about.html">About & Projects</a>
                 <a href="blog.html">Blog</a>
@@ -49,126 +64,211 @@
         </div>
     </header>
 
-    <section class="hero" data-aos="fade-down">
+    <!-- ── HERO ── -->
+    <section class="hero">
         <div class="container hero-content">
-            <h1 class="hero-title">
-                <span class="hero-title-text">
-                    Computer Systems Engineer<br>
-                    AI/ML Engineer<br>
-                    Data Analyst
-                </span>
+
+            <div class="status-badge" data-aos="fade-down" data-aos-delay="50">
+                <span class="status-dot"></span>
+                <span>AI Engineer I &nbsp;·&nbsp; XFlow Research Inc, Islamabad</span>
+            </div>
+
+            <h1 class="hero-title" data-aos="fade-down" data-aos-delay="150">
+                <span id="typed-output"></span>
             </h1>
 
-            <p class="subtitle">
-                Leveraging a Computer Systems Engineering background to build efficient AI/ML models
-                and drive insights through data analytics.
+            <p class="subtitle" data-aos="fade-up" data-aos-delay="250">
+                Building intelligent systems at the intersection of AI research and engineering —
+                from transformer-based models to low-level systems design.
             </p>
 
-            <div class="hero-buttons">
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="350">
                 <a href="case-study-ser.html" class="btn btn-primary">
-                    View Featured Case Study
+                    <i class="fas fa-flask"></i>&nbsp; View Case Study
                 </a>
-                <a href="Didar_Ali_CV.pdf" download class="btn btn-secondary">
-                    Download CV (PDF)
+                <a href="Didar_Ali_AI_ML_Engineer.pdf" download class="btn btn-secondary">
+                    <i class="fas fa-download"></i>&nbsp; Download CV
                 </a>
             </div>
 
-            <p style="margin-top:50px;font-size:1.3rem;color:#cdd6f4;">
-                Open to full-time roles in AI/ML · Data · Systems Engineering
-            </p>
-        </div>
-    </section>
-
-    <section class="light-section" data-aos="fade-up">
-        <div class="container skills-grid" style="text-align:center;">
-
-            <div>
-                <h3 style="font-size:3rem;font-weight:900;color:var(--primary);">
-                    79%
-                </h3>
-                <p style="font-size:1.3rem;color:var(--text-muted);">
-                    Best Model Accuracy<br>
-                    <small>Wav2Vec2 Speech Emotion (Noisy Environment)</small>
-                </p>
-            </div>
-
-            <div>
-                <h3 style="font-size:3rem;font-weight:900;color:var(--secondary);">
-                    3+
-                </h3>
-                <p style="font-size:1.35rem;color:var(--text-muted);line-height:1.8;">
-                    Key Projects<br>
-                    <span style="font-size:1.1rem;color:var(--text-light);">
-                        High-Impact ML & Systems Level Projects
-                    </span>
-                </p>
-            </div>
-
-            <div>
-                <h3 style="font-size:3rem;font-weight:900;color:var(--primary);">
-                    4+
-                </h3>
-                <p style="font-size:1.35rem;color:var(--text-muted);line-height:1.8;">
-                    Professional Certs<br>
-                    <span style="font-size:1.1rem;color:var(--text-light);">
-                        Google Cybersecurity & Data Analytics
-                    </span>
-                </p>
-            </div>
-
-            <div>
-                <h3 style="font-size:3rem;font-weight:900;color:var(--secondary);">
-                    2025
-                </h3>
-                <p style="font-size:1.35rem;color:var(--text-muted);line-height:1.8;">
-                    B.Sc Graduate<br>
-                    <span style="font-size:1.15rem;color:var(--text-light);">
-                        Computer Systems Engineering<br>UET Peshawar
-                    </span>
-                </p>
+            <div class="hero-social" data-aos="fade-up" data-aos-delay="450">
+                <a href="https://github.com/didar-ali-deed" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/didar-ali-deed" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:didarali1129@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
 
         </div>
     </section>
 
-    <footer>
+    <!-- ── STATS ── -->
+    <section class="light-section stats-section" data-aos="fade-up">
+        <div class="container stats-grid">
+
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="50">
+                <div class="stat-icon"><i class="fas fa-brain"></i></div>
+                <h3 class="counter" data-target="79" data-suffix="%">79%</h3>
+                <p class="stat-label">Best Model Accuracy</p>
+                <p class="stat-sub">Wav2Vec2 Speech Emotion · Noisy Real-World Audio</p>
+            </div>
+
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="150">
+                <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+                <h3 class="counter" data-target="3" data-suffix="+">3+</h3>
+                <p class="stat-label">Key Projects</p>
+                <p class="stat-sub">High-Impact ML & Systems Engineering</p>
+            </div>
+
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="250">
+                <div class="stat-icon"><i class="fas fa-certificate"></i></div>
+                <h3 class="counter" data-target="4" data-suffix="+">4+</h3>
+                <p class="stat-label">Professional Certs</p>
+                <p class="stat-sub">Google Cybersecurity & Data Analytics</p>
+            </div>
+
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="350">
+                <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+                <h3 style="font-size:2.8rem;font-weight:900;color:var(--accent-teal);margin-bottom:8px;">Now</h3>
+                <p class="stat-label">Employed Full-Time</p>
+                <p class="stat-sub">AI Engineer I · XFlow Research Inc</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── WHAT I DO ── -->
+    <section class="light-section" style="padding-top:20px;" data-aos="fade-up">
         <div class="container">
-            <p>© 2025 Didar Ali • Made with passion in Pakistan</p>
+            <h2 class="section-title">What I Do</h2>
+            <div class="services-grid">
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="service-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI / ML Engineering</h3>
+                    <p>Fine-tuning transformer-based models, building end-to-end ML pipelines, and deploying production-ready AI systems using PyTorch and TensorFlow.</p>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Data Analytics</h3>
+                    <p>End-to-end data pipelines, exploratory analysis, feature engineering, and predictive modeling with Pandas, NumPy, and Scikit-learn.</p>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="service-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Systems Engineering</h3>
+                    <p>Low-level programming in C/Linux including memory management, file system design, and OS-level architecture from scratch.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FEATURED WORK ── -->
+    <section class="light-section" style="padding-top:20px;" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Featured Work</h2>
+            <div class="projects-grid">
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="project-overlay">
+                        <a href="case-study-ser.html">Case Study</a>
+                        <a href="https://github.com/didar-ali-deed/Vocal-Sentiments-Transformer-Based-SER" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <img src="img/speech.jpg" alt="Speech Emotion Recognition project" loading="lazy"
+                        onerror="this.src='https://placehold.co/800x400/6366f1/ffffff?text=SER+Project'">
+                    <div class="project-info">
+                        <h3>Vocal Sentiment Transformer</h3>
+                        <span class="metric">79% Accuracy – Noisy Real-World Speech</span>
+                        <p>Fine-tuned Wav2Vec2 on SER datasets to classify emotions including fear, happy, sad, calm, and anger.</p>
+                        <span class="tech-stack">PyTorch · Wav2Vec2 · Pandas · Torchaudio</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="project-overlay">
+                        <a href="https://github.com/didar-ali-deed/health-ai-super-app" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <img src="img/health.png" alt="AI Health Super App" loading="lazy"
+                        onerror="this.src='https://placehold.co/800x400/0ea5e9/ffffff?text=Health+AI'">
+                    <div class="project-info">
+                        <h3>AI Health Super App</h3>
+                        <span class="metric">Multiple Disease Prediction</span>
+                        <p>Diagnostic models for Diabetes, Parkinson's, and Pneumonia integrated into a single Streamlit interface.</p>
+                        <span class="tech-stack">TensorFlow · Streamlit · Scikit-learn · Python</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="project-overlay">
+                        <a href="https://github.com/didar-ali-deed/Virtual-File-System--OS-Project--C-language--Linux--Ubantu" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <img src="img/vfs.jpg" alt="Virtual File System" loading="lazy"
+                        onerror="this.src='https://placehold.co/800x400/8b5cf6/ffffff?text=VFS+Project'">
+                    <div class="project-info">
+                        <h3>Virtual File System</h3>
+                        <span class="metric">Linux-based OS Simulation</span>
+                        <p>File handling, memory blocks, metadata, delete/restore, and inode-style structure in C on Linux.</p>
+                        <span class="tech-stack">C Language · Linux · OS Concepts</span>
+                    </div>
+                </div>
+
+            </div>
+            <div style="text-align:center;margin-top:50px;" data-aos="fade-up">
+                <a href="about.html" class="btn btn-primary">View All Projects &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <div class="container footer-inner">
+            <p class="footer-copy">© 2026 Didar Ali &nbsp;·&nbsp; Made in Pakistan</p>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="footer-social">
+                <a href="https://github.com/didar-ali-deed" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/didar-ali-deed" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:didarali1129@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="js/script.js"></script>
 
     <script>
-        AOS.init();
+        // Typed.js
+        new Typed('#typed-output', {
+            strings: ['AI Engineer I', 'ML Researcher', 'Computer Systems Engineer', 'Data Analyst'],
+            typeSpeed: 65, backSpeed: 35, backDelay: 2400, loop: true, showCursor: true, cursorChar: '|'
+        });
 
-        const lenis = new Lenis();
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-
-        const themeToggle = document.getElementById("theme-toggle");
-        const body = document.body;
-        const sunIcon = document.getElementById("sun-icon");
-        const moonIcon = document.getElementById("moon-icon");
-
-        themeToggle.onclick = () => {
-            body.classList.toggle("dark-mode");
-            sunIcon.style.display = body.classList.contains("dark-mode") ? "none" : "block";
-            moonIcon.style.display = body.classList.contains("dark-mode") ? "block" : "none";
-            localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
-        };
-
-        if (localStorage.getItem("theme") === "dark") {
-            body.classList.add("dark-mode");
-            sunIcon.style.display = "none";
-            moonIcon.style.display = "block";
-        }
+        // Animated counters
+        const counters = document.querySelectorAll('.counter');
+        const countObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const target = +el.getAttribute('data-target');
+                const suffix = el.getAttribute('data-suffix') || '';
+                let count = 0;
+                const step = target / 70;
+                const timer = setInterval(() => {
+                    count = Math.min(count + step, target);
+                    el.textContent = Math.floor(count) + suffix;
+                    if (count >= target) clearInterval(timer);
+                }, 18);
+                countObs.unobserve(el);
+            });
+        }, { threshold: 0.6 });
+        counters.forEach(c => countObs.observe(c));
     </script>
 
 </body>
-
 </html>

@@ -4,15 +4,20 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog & Articles – Didar Ali | AI/ML & Systems Engineer</title>
-    <meta name="description"
-        content="Articles and technical posts on Machine Learning, C/Linux Systems, and Data Engineering." />
+    <meta name="theme-color" content="#6366f1" />
 
-    <meta property="og:title" content="Didar Ali's Blog">
-    <meta property="og:description" content="Technical deep dives on AI/ML and Systems.">
+    <title>Blog – Didar Ali | AI/ML & Systems Engineering</title>
+    <meta name="description" content="Technical articles and insights on Machine Learning, transformer models, C/Linux Systems, and Data Engineering by Didar Ali." />
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <meta property="og:title" content="Didar Ali's Blog – AI/ML & Systems Engineering">
+    <meta property="og:description" content="Technical deep dives on AI/ML and Systems Engineering.">
+    <link rel="canonical" href="blog.html">
+
+    <link rel="icon" href="img/logo.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -20,6 +25,18 @@
 
 <body>
 
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="img/logo.png" alt="Loading" class="preloader-logo">
+    </div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- Theme Toggle -->
     <div id="theme-toggle" title="Toggle dark mode">
         <div><i class="fas fa-sun" id="sun-icon"></i><i class="fas fa-moon" id="moon-icon"></i></div>
     </div>
@@ -27,9 +44,12 @@
     <header>
         <div class="container header-inner">
             <a href="index.html" class="logo-link">
-                <img src="img/logo.png" alt="Didar Ali" class="logo-img">
+                <img src="img/logo.png" alt="Didar Ali" class="logo-img" loading="lazy">
             </a>
-            <nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="nav-menu">
                 <a href="index.html">Home</a>
                 <a href="about.html">About & Projects</a>
                 <a href="blog.html" class="active">Blog</a>
@@ -38,54 +58,90 @@
         </div>
     </header>
 
-    <section class="hero" data-aos="fade-down" style="min-height: 50vh;">
+    <!-- ── HERO ── -->
+    <section class="hero" style="min-height:50vh;padding-top:120px;padding-bottom:60px;">
         <div class="container hero-content">
-            <h1>Technical Articles & Insights</h1>
-            <p class="subtitle">Deep dives on Machine Learning, C/Linux Systems, and Data Engineering topics.</p>
+            <h1 data-aos="fade-down" style="font-size:clamp(2.4rem,8vw,5rem);font-weight:900;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1;margin-bottom:20px;">
+                Technical Articles
+            </h1>
+            <p class="subtitle" data-aos="fade-up" data-aos-delay="100">
+                Deep dives on Machine Learning, transformer architectures, C/Linux systems, and data engineering.
+            </p>
         </div>
     </section>
 
+    <!-- ── ARTICLES ── -->
     <section class="light-section">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Latest Posts</h2>
 
-            <div class="blog-grid">
-                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
-                    <h4>The Difference Between CNNs and Transformers in Audio Processing</h4>
-                    <p>A breakdown of how self-attention mechanisms outperform traditional convolutional networks for
-                        contextual audio tasks like SER.</p>
-                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
+            <h2 class="section-title" data-aos="fade-up">Coming Soon</h2>
 
-                <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
-                    <h4>What I Learned Building a Virtual File System in C on Linux</h4>
-                    <p>My journey implementing core OS concepts: memory management, inode structures, and block
-                        allocation from scratch.</p>
-                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
-                    <h4>A Guide to Deploying ML Models Using FastAPI and Docker</h4>
-                    <p>A step-by-step tutorial on wrapping a PyTorch model in a REST API and containerizing it for
-                        scalable deployment.</p>
-                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
+            <!-- Coming-soon banner -->
+            <div class="blog-coming-banner" data-aos="fade-up">
+                <i class="fas fa-pen-nib"></i>
+                <p style="font-size:1.1rem;max-width:560px;margin:0 auto 10px;">
+                    Articles are being written. Check back soon — topics below are in progress.
+                </p>
+                <p style="font-size:0.9rem;color:var(--text-light);">
+                    Meanwhile, explore the <a href="case-study-ser.html" style="color:var(--primary);font-weight:600;">SER Case Study</a> for an in-depth technical write-up.
+                </p>
             </div>
 
-            <p style="text-align:center; margin-top:80px; font-size:1.1rem; color:var(--text-muted);">More articles are
-                coming soon!</p>
+            <div class="blog-grid">
+
+                <div class="blog-card blog-card-coming" data-aos="fade-up" data-aos-delay="100">
+                    <span class="blog-tag">Machine Learning</span>
+                    <h4>CNNs vs Transformers in Audio Processing</h4>
+                    <p>How self-attention mechanisms outperform convolutional networks for contextual audio tasks like speech emotion recognition.</p>
+                    <span class="read-more" style="display:inline-flex;align-items:center;gap:6px;color:var(--text-light);font-size:0.9rem;margin-top:12px;">
+                        <i class="fas fa-clock"></i> In Progress
+                    </span>
+                </div>
+
+                <div class="blog-card blog-card-coming" data-aos="fade-up" data-aos-delay="200">
+                    <span class="blog-tag">Systems Engineering</span>
+                    <h4>Building a Virtual File System in C on Linux</h4>
+                    <p>Lessons from implementing core OS concepts: memory management, inode structures, and block allocation from scratch.</p>
+                    <span class="read-more" style="display:inline-flex;align-items:center;gap:6px;color:var(--text-light);font-size:0.9rem;margin-top:12px;">
+                        <i class="fas fa-clock"></i> In Progress
+                    </span>
+                </div>
+
+                <div class="blog-card blog-card-coming" data-aos="fade-up" data-aos-delay="300">
+                    <span class="blog-tag">MLOps</span>
+                    <h4>Deploying ML Models with FastAPI and Docker</h4>
+                    <p>Step-by-step guide to wrapping a PyTorch model in a REST API and containerizing it for scalable, reproducible deployment.</p>
+                    <span class="read-more" style="display:inline-flex;align-items:center;gap:6px;color:var(--text-light);font-size:0.9rem;margin-top:12px;">
+                        <i class="fas fa-clock"></i> In Progress
+                    </span>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
+    <!-- ── FOOTER ── -->
     <footer>
-        <div class="container">
-            <p>© 2025 Didar Ali • Made in Pakistan</p>
+        <div class="container footer-inner">
+            <p class="footer-copy">© 2026 Didar Ali &nbsp;·&nbsp; Made in Pakistan</p>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="footer-social">
+                <a href="https://github.com/didar-ali-deed" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/didar-ali-deed" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:didarali1129@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="js/script.js"></script>
-</body>
 
+</body>
 </html>

@@ -4,15 +4,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6366f1" />
     <title>Case Study: Vocal Sentiment Transformer – Didar Ali</title>
-    <meta name="description"
-        content="Detailed case study of the Speech Emotion Recognition (SER) project using Wav2Vec2, achieving 79% accuracy on noisy audio data." />
+    <meta name="description" content="Detailed case study of the Speech Emotion Recognition (SER) project using Wav2Vec2, achieving 79% accuracy on noisy audio data." />
 
-    <meta property="og:title" content="Case Study: Vocal Sentiment Transformer">
+    <meta property="og:title" content="Case Study: Vocal Sentiment Transformer – Didar Ali">
     <meta property="og:description" content="Detailed analysis of the 79% accuracy Wav2Vec2 SER model.">
+    <link rel="canonical" href="case-study-ser.html">
+    <link rel="icon" href="img/logo.png" type="image/png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -75,12 +78,31 @@
 
 <body>
 
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="img/logo.png" alt="Loading" class="preloader-logo">
+    </div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- Theme Toggle -->
+    <div id="theme-toggle" title="Toggle dark mode">
+        <div><i class="fas fa-sun" id="sun-icon"></i><i class="fas fa-moon" id="moon-icon"></i></div>
+    </div>
+
     <header>
         <div class="container header-inner">
             <a href="index.html" class="logo-link">
-                <img src="img/logo.png" alt="Didar Ali" class="logo-img">
+                <img src="img/logo.png" alt="Didar Ali" class="logo-img" loading="lazy">
             </a>
-            <nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="nav-menu">
                 <a href="index.html">Home</a>
                 <a href="about.html">About & Projects</a>
                 <a href="blog.html">Blog</a>
@@ -175,11 +197,23 @@
     </section>
 
     <footer>
-        <div class="container">
-            <p>© 2025 Didar Ali • Made in Pakistan</p>
+        <div class="container footer-inner">
+            <p class="footer-copy">© 2026 Didar Ali &nbsp;·&nbsp; Made in Pakistan</p>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="footer-social">
+                <a href="https://github.com/didar-ali-deed" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/didar-ali-deed" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:didarali1129@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="js/script.js"></script>
 </body>

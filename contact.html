@@ -4,30 +4,39 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6366f1" />
 
-    <title>Contact – Didar Ali | AI/ML Engineer & Systems Developer</title>
-    <meta name="description"
-        content="Contact Didar Ali – Machine Learning, Deep Learning, Systems & Data Engineering. Open to work and collaboration opportunities." />
+    <title>Contact – Didar Ali | AI Engineer at XFlow Research Inc</title>
+    <meta name="description" content="Contact Didar Ali – AI Engineer I at XFlow Research Inc. Open to AI/ML collaboration, research opportunities, and professional enquiries." />
 
     <meta property="og:title" content="Contact – Didar Ali" />
-    <meta property="og:description" content="Get in touch for AI/ML, Systems Engineering and Data roles." />
+    <meta property="og:description" content="Get in touch with Didar Ali for AI/ML and engineering enquiries." />
+    <link rel="canonical" href="contact.html">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet" />
+    <link rel="icon" href="img/logo.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="css/style.css" />
-
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-    <script>
-        (function () {
-            emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
-        })();
-    </script>
 </head>
 
 <body>
 
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="img/logo.png" alt="Loading" class="preloader-logo">
+    </div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- Theme Toggle -->
     <div id="theme-toggle" title="Toggle dark mode">
         <div><i class="fas fa-sun" id="sun-icon"></i><i class="fas fa-moon" id="moon-icon"></i></div>
     </div>
@@ -35,9 +44,12 @@
     <header>
         <div class="container header-inner">
             <a href="index.html" class="logo-link">
-                <img src="img/logo.png" alt="Didar Ali Logo" class="logo-img">
+                <img src="img/logo.png" alt="Didar Ali Logo" class="logo-img" loading="lazy">
             </a>
-            <nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="nav-menu">
                 <a href="index.html">Home</a>
                 <a href="about.html">About & Projects</a>
                 <a href="blog.html">Blog</a>
@@ -46,66 +58,75 @@
         </div>
     </header>
 
-    <section class="hero" style="min-height:60vh; padding-top:100px;" data-aos="fade-down">
+    <!-- ── HERO ── -->
+    <section class="hero" style="min-height:55vh;padding-top:120px;padding-bottom:60px;">
         <div class="container hero-content">
-            <h1>Let's Build Together</h1>
-            <p class="subtitle">
-                Open to full-time roles in <strong>AI/ML</strong>, <strong>Systems Engineering</strong>, and
-                <strong>Data Analytics</strong>.
+            <div class="status-badge" data-aos="fade-down">
+                <span class="status-dot"></span>
+                <span>AI Engineer I &nbsp;·&nbsp; XFlow Research Inc, Islamabad</span>
+            </div>
+            <h1 data-aos="fade-down" data-aos-delay="100" style="font-size:clamp(2.4rem,8vw,5rem);font-weight:900;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1;margin-bottom:20px;">
+                Let's Connect
+            </h1>
+            <p class="subtitle" data-aos="fade-up" data-aos-delay="200" style="margin-bottom:36px;">
+                Open to AI/ML collaboration, research opportunities, and professional enquiries.
             </p>
 
-            <div class="cv-buttons cv-buttons-hero">
-                <a href="Didar_Ali_AI_ML_Engineer.pdf" download class="btn cv-btn ai-cv">AI / ML Engineer CV</a>
-                <a href="Didar_Ali_Computer_Systems_Engineer.pdf" download class="btn cv-btn systems-cv">Systems
-                    Engineer CV</a>
-                <a href="Didar_Ali_Data_Analyst_CV.pdf" download class="btn cv-btn data-cv">Data Analyst CV</a>
+            <div class="cv-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="Didar_Ali_AI_ML_Engineer.pdf" download class="btn cv-btn ai-cv">
+                    <i class="fas fa-download"></i> AI/ML CV
+                </a>
+                <a href="Didar_Ali_Computer_Systems_Engineer.pdf" download class="btn cv-btn systems-cv">
+                    <i class="fas fa-download"></i> Systems CV
+                </a>
+                <a href="Didar_Ali_Data_Analyst_CV.pdf" download class="btn cv-btn data-cv">
+                    <i class="fas fa-download"></i> Data Analyst CV
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- ── CONTACT LAYOUT ── -->
     <section class="light-section">
-        <div class="container" style="max-width:1300px;">
-
+        <div class="container" style="max-width:1200px;">
             <div class="contact-layout">
 
+                <!-- Form -->
                 <div data-aos="fade-right">
-                    <h2 class="section-title" style="text-align:left; margin-bottom:40px;">Send a Message</h2>
+                    <h2 class="section-title" style="text-align:left;margin-bottom:36px;">Send a Message</h2>
 
-                    <form id="contactForm" class="contact-form">
-                        <input type="text" name="name" aria-label="Name" placeholder="Your Name" required />
-                        <input type="email" name="email" aria-label="Email" placeholder="Your Email" required />
-                        <input type="text" name="subject" aria-label="Subject"
-                            placeholder="Subject (e.g. Job Opportunity)" required />
-                        <textarea name="message" rows="7" aria-label="Message" placeholder="Your message..."
-                            required></textarea>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <input type="text" name="name" placeholder="Your Name" required autocomplete="name" />
+                        <input type="email" name="email" placeholder="Your Email" required autocomplete="email" />
+                        <input type="text" name="subject" placeholder="Subject (e.g. Collaboration Opportunity)" required />
+                        <textarea name="message" rows="7" placeholder="Your message…" required></textarea>
+                        <button type="submit" class="btn btn-primary" style="width:100%;margin-top:6px;">
+                            <i class="fas fa-paper-plane"></i>&nbsp; Send Message
+                        </button>
                     </form>
 
-                    <p class="contact-info">
-                        Or reach out directly → <strong>didarali1129@gmail.com</strong> | +92 342 0032958
+                    <p class="contact-info" style="margin-top:24px;">
+                        Or reach me directly: &nbsp;<strong>didarali1129@gmail.com</strong> &nbsp;|&nbsp; +92 342 0032958
                     </p>
                 </div>
 
+                <!-- CV Quick Access -->
                 <div data-aos="fade-left">
-                    <h2 class="section-title" style="text-align:left; margin-bottom:40px;">Quick Access</h2>
+                    <h2 class="section-title" style="text-align:left;margin-bottom:36px;">Quick Access</h2>
 
                     <div class="cv-card">
-                        <img src="img/cv-preview.jpg" alt="CV Preview"
-                            onerror="this.src='https://via.placeholder.com/600x840/6366f1/white?text=CV+PREVIEW'" />
-
-                        <div class="cv-buttons" style="margin:30px 0;">
+                        <img src="img/cv-preview.jpg" alt="CV Preview" loading="lazy"
+                            onerror="this.src='https://placehold.co/600x840/6366f1/ffffff?text=CV+Preview'">
+                        <div class="cv-buttons" style="margin-top:24px;">
                             <a href="Didar_Ali_AI_ML_Engineer.pdf" download class="btn cv-btn ai-cv">AI/ML CV</a>
-                            <a href="Didar_Ali_Computer_Systems_Engineer.pdf" download
-                                class="btn cv-btn systems-cv">Systems CV</a>
+                            <a href="Didar_Ali_Computer_Systems_Engineer.pdf" download class="btn cv-btn systems-cv">Systems CV</a>
                             <a href="Didar_Ali_Data_Analyst_CV.pdf" download class="btn cv-btn data-cv">Data CV</a>
                         </div>
                     </div>
 
-                    <div class="social-links" style="text-align:center; margin-top:30px;">
-                        <a href="https://linkedin.com/in/didar-ali-deed" target="_blank" aria-label="LinkedIn"><i
-                                class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/didar-ali-deed" target="_blank" aria-label="GitHub"><i
-                                class="fab fa-github"></i></a>
+                    <div class="social-links" style="margin-top:36px;">
+                        <a href="https://linkedin.com/in/didar-ali-deed" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/didar-ali-deed" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="mailto:didarali1129@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
@@ -114,9 +135,21 @@
         </div>
     </section>
 
+    <!-- ── FOOTER ── -->
     <footer>
-        <div class="container">
-            <p>© 2025 Didar Ali • Made in Pakistan</p>
+        <div class="container footer-inner">
+            <p class="footer-copy">© 2026 Didar Ali &nbsp;·&nbsp; Made in Pakistan</p>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="footer-social">
+                <a href="https://github.com/didar-ali-deed" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/didar-ali-deed" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:didarali1129@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
@@ -124,25 +157,5 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="js/script.js"></script>
 
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            emailjs.send("YOUR_EMAILJS_SERVICE_ID", "YOUR_EMAILJS_TEMPLATE_ID", {
-                name: this.name.value,
-                email: this.email.value,
-                subject: this.subject.value,
-                message: this.message.value,
-            })
-                .then(() => {
-                    alert("Message sent successfully!");
-                    this.reset();
-                })
-                .catch(() => {
-                    alert("Error! Could not send message.");
-                });
-        });
-    </script>
 </body>
-
 </html>
